@@ -1,1 +1,1 @@
-https://valeryzhvalevski.github.io/my-easy-calc/
+https://valeryzhvalevski.github.io/my-simple-calc/
