@@ -5,7 +5,17 @@ const reset = document.getElementById('btn-reset');
 
 button.forEach((el) => {
   el.addEventListener("click", function () {
-    display.value += el.value;
+    const inputValue = el.value;
+    const lastChar = display.value.charAt(display.value.length - 1);
+    if (!isNaN(inputValue) || inputValue === '.' || inputValue === '(' || inputValue === ')' || ['+', '-', '*', '/'].includes(inputValue)) {
+      if (inputValue === '+' || inputValue === '-' || inputValue === '*' || inputValue === '/') {
+        if (!['+', '-', '*', '/'].includes(lastChar)) {
+          display.value += inputValue;
+        }
+      } else {
+        display.value += inputValue;
+      }
+    }
   });
 });
 
@@ -15,4 +25,4 @@ equals.addEventListener("click", function () {
 
 reset.addEventListener('click', function() {
   display.value = '';
-})
+});
